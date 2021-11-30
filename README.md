@@ -50,6 +50,8 @@ docker-compose run frontend yarn install
 docker-compose build
 
 docker-compose run backend rails db:setup
+
+TODO: Testa så att db:setup även kör följande:
 docker-compose run backend rails db:schema:load
 docker-compose run backend rails db:seed
 ```
