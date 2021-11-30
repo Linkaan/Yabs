@@ -10,7 +10,10 @@
       :status="book.condition" 
       :barcode="book.barcode"
     />
-    <h1 v-else class="display-2">
+    <h1
+      v-else
+      class="display-2"
+    >
       Något gick fel :ok_woman:
     </h1>
   </div>
