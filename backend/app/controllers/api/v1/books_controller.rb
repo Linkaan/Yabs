@@ -16,7 +16,7 @@ class Api::V1::BooksController < ApplicationController
   end
 
   # This is the create method simply outputting the instance of the json object @book based
-  # on if the loan is able to save or not, else outputting the error message
+  # on if the book is able to save or not, else outputting the error message
 
   def create
     @book = Book.new(book_params)
