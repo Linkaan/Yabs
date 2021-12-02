@@ -33,13 +33,21 @@ To make use of the pre-commit hooks setup by this project you are also required 
 
 ## Installation
 
-Install dependencies:
+Install Ruby 2.7.5:
 
 ```console
-sudo gem install docker-sync
+ruby-install ruby-2.7.5
 ```
 
-Put secrets.yml containing google_client_secrets in backend/config/secrets.yml
+Install dependencies:
+
+In the project's root folder (or when having manually switched to ruby 2.7.5 (`chruby ruby-2.7.5`):
+
+```console
+gem install docker-sync
+```
+
+Put secrets.yml (see Slack) containing google_client_secrets in backend/config/secrets.yml
 
 Install Yabs with:
 
