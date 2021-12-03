@@ -31,79 +31,103 @@ Also install nodejs and yarn locally so linter and Vetur works properly in edito
 
 To make use of the pre-commit hooks setup by this project you are also required to run `yarn install` in the root of YABS
 
-## Installation
-
-Install Ruby 2.7.5:
-
-```console
-ruby-install ruby-2.7.5
-```
-
-Install dependencies:
-
-In the project's root folder (or when having manually switched to ruby 2.7.5 (`chruby ruby-2.7.5`):
-
-```console
-gem install docker-sync
-```
+## Installation & Configuration
 
 Put secrets.yml (see Slack) containing google_client_secrets in backend/config/secrets.yml
 
-Install Yabs with:
+The app runs in a docker container. After setting up the container (see below), all interaction with the app is managed through the container.
+### Visual Studio Code
+
+Install the [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension
+
+### Docker
+
+Install [Docker Desktop](https://www.docker.com/products/docker-desktop)
+
+Build the container with:
 
 ```console
-docker-sync start
-docker-compose run backend bundle install
-docker-compose run frontend yarn install
 docker-compose build
-
-docker-compose run backend rails db:setup
-
-TODO: Testa så att db:setup även kör följande:
-docker-compose run backend rails db:schema:load
-docker-compose run backend rails db:seed
 ```
 
+This builds the container and copies the source files to the container.
 
-## Running unit tests
-
-Rails fixtures are stored as snapshots. They only need to be updated if changes are done to seed.rb file:
-
-```console
-docker-compose run backend rails db:seed fixture=all
-```
-
-To run the unit tests:
-
-```console
-docker-compose run backend rake
-docker-compose run frontend yarn test:unit
-```
-
-## Running
-
-If you haven't started docker-sync yet, do that first:
-
-```console
-docker-sync clean
-docker-sync start
-```
-
-Finally:
+Start the app container and the db container:
 
 ```console
 docker-compose up
 ```
 
-## Tap into backend container for rails CLI
+## Connecting to the container
 
-``` console
-docker-compose exec backend bash
+### Visual Studio Code
+
+Click the "Remote Explorer" icon in the left menu.
+Make sure "Containers" is selected in the top dropdown
+
+Select `yabs_app_1` and click `Open` - Select the `/app` folder.
+
+### Terminal
+
+You will probably want two terminals (or terminal tabs) connected to the container - one for backend and one for frontend
+
+```console
+docker-compose exec app zsh
+```
+
+## Interacting with the servers
+
+### Setup db
+
+In `/app/backend`
+
+```console
+rails db:setup
+```
+
+### Start Backend
+In `/app/backend`
+
+
+```console
+rails s -b 0.0.0.0
+```
+### Start Frontend
+
+```console
+yarn run serve
+```
+
+You can now access the frontend at [http://localhost:8080](http://localhost:8080)
+## Running unit tests
+
+Rails fixtures are stored as snapshots. They only need to be updated if changes are done to seed.rb file:
+
+```console
+rails db:seed fixture=all
+```
+
+To run the unit tests:
+### Backend
+
+In `/app/backend`
+
+```console
+rake
+```
+### Frontend
+
+In `/app/frontend`
+
+```console
+yarn test:unit
 ```
 
 ## Reseeding database
 
 To reseed the database run these commands in running docker backend:
+
+In `/app/backend`
 
 ``` console
 docker-compose exec backend rails db:setup
