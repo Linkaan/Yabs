@@ -75,6 +75,16 @@ You will probably want two terminals (or terminal tabs) connected to the contain
 docker-compose exec app zsh
 ```
 
+#### GitHub access
+
+In the container, run:
+
+```console
+gh auth login
+```
+
+And authenticate to GitHub
+
 ## Interacting with the servers
 
 ### Setup db
