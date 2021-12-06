@@ -7,12 +7,16 @@ RUN echo 'deb http://httpredir.debian.org/debian buster-backports main contrib n
 RUN curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
 RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" >> /etc/apt/sources.list.d/github-cli.list
 
+## Add Newer node repo
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+
+
 # --allow-insecure-repositories since I could not get key to work for backports
 RUN apt update --allow-insecure-repositories
 # Install backport
 RUN apt install -y libseccomp2 -t buster-backports 
 # Install gh cli build-tools, git, sqlite, node, npm, zsh, python
-RUN apt install -y gh build-essential git libsqlite3-dev nodejs npm zsh python
+RUN apt install -y gh build-essential git libsqlite3-dev nodejs zsh python
 # Install Yarn
 RUN npm install -g yarn
 # Install gems for VS Code integration
@@ -35,9 +39,9 @@ WORKDIR /app
 COPY ./ /app
 
 # Required for pre-commit hooks
-RUN cd /app && yarn install
+#RUN cd /app && yarn install
 
 # Install backend gems
-RUN cd /app/backend && bundle install 
+#RUN cd /app/backend && bundle install 
 # Install frontend node modules
-RUN cd /app/frontend && yarn install
+#RUN cd /app/frontend && yarn install
