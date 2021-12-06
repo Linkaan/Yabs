@@ -1,4 +1,4 @@
-FROM ruby:2.7.5
+FROM ruby:2.7.2
 
 # ADD backports
 RUN echo 'deb http://httpredir.debian.org/debian buster-backports main contrib non-free' >> /etc/apt/sources.list.d/debian-backports.list
