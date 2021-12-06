@@ -65,7 +65,7 @@ docker-compose up
 Click the "Remote Explorer" icon in the left menu.
 Make sure "Containers" is selected in the top dropdown
 
-Select `yabs_app_1` and click `Open` - Select the `/app` folder.
+Select `yabs_app_1` and click `Open` or `Attach Container` - Select the `/app` folder.
 
 ### Terminal
 

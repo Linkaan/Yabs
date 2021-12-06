@@ -35,5 +35,14 @@ WORKDIR /app
 # Copy source code to workdir
 COPY ./ /app
 
-# Install all dependencies in parallel
-RUN (gem install ruby-debug-ide debase solargraph) & (cd /app && yarn install) & (cd /app/backend && bundle install ) & (cd /app/frontend && yarn install)
+#Needed for vs-code integration
+RUN gem install ruby-debug-ide debase solargraph
+
+#Needed for pre-commit hooks
+RUN cd /app && yarn install 
+
+# Install backend dependencies
+RUN cd /app/backend && bundle install
+
+# Install frontend dependencies
+RUN cd /app/frontend && yarn install
