@@ -18,8 +18,6 @@ RUN apt install -y libseccomp2 -t buster-backports
 RUN apt install -y gh build-essential git libsqlite3-dev nodejs zsh python
 # Install Yarn
 RUN npm install -g yarn
-# Install gems for VS Code integration
-RUN gem install ruby-debug-ide debase solargraph
 
 # Install oh-my-zsh
 RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
