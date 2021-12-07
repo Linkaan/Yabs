@@ -27,9 +27,9 @@ Supports development under Mac with docker for mac, Linux with docker and Window
 - [endwise](https://marketplace.visualstudio.com/items?itemName=kaiwood.endwise)
 - [Better Align](https://marketplace.visualstudio.com/items?itemName=wwm.better-align)
 
-Also install nodejs and yarn locally so linter and Vetur works properly in editor. Run `yarn install` in /frontend to install node modules on host machine.
+(Skip for now: Also install nodejs and yarn locally so linter and Vetur works properly in editor. Run `yarn install` in /frontend to install node modules on host machine.
 
-To make use of the pre-commit hooks setup by this project you are also required to run `yarn install` in the root of YABS
+To make use of the pre-commit hooks setup by this project you are also required to run `yarn install` in the root of YABS)
 
 ## Installation & Configuration
 
@@ -48,6 +48,8 @@ Install the [Remote - Containers](https://marketplace.visualstudio.com/items?ite
 
 Install [Docker Desktop](https://www.docker.com/products/docker-desktop)
 
+Make sure the Docker Desktop window is open or you might have issues executing the following steps.
+
 Open the Yabs project in the command prompt.
 
 Build the container with:
@@ -56,7 +58,7 @@ Build the container with:
 docker-compose build
 ```
 
-This builds the container and copies the source files to the container.
+This builds the container and copies the source files to the container. The build may take a couple of minutes.
 
 Start the app container and the db container:
 
@@ -71,7 +73,8 @@ docker-compose up
 Click the "Remote Explorer" icon in the left menu.
 Make sure "Containers" is selected in the top dropdown
 
-Select `yabs_app_1` and click `Open` or `Attach Container` - Select the `/app` folder.
+Select `yabs_app_1` and right click `Open` or `Attach Container`
+Click open in the new VSC window, then revert back by pressing `..` and select then the `/app` folder.
 
 ### Terminal
 
@@ -89,6 +92,14 @@ In the container, run:
 gh auth login
 ```
 
+When installing make sure to pick the right options:
+- Github.com
+- https
+- n
+- open in browser
+
+At this stage open https://github.com/login/device
+Copy your one-time code, go to browser (press space) then paste in your code.
 And authenticate to GitHub
 
 ## Interacting with the servers
@@ -109,6 +120,7 @@ In `/app/backend`
 rails s -b 0.0.0.0
 ```
 ### Start Frontend
+In `/app/frontend`
 
 ```console
 yarn run serve
