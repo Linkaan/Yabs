@@ -12,7 +12,7 @@ Yabs or yet another booking system is a collection of tools for creating card id
 
 ## License
 
-Yabs is released under the [MIT License](https://opensource.org/licenses/MIT).
+Yabs is released under the [MIT License](https://opensource.org/licenses/MIT). 
 
 ## Development environment
 
