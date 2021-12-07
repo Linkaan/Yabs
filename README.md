@@ -131,6 +131,7 @@ In `/app/frontend`
 
 ```console
 yarn test:unit
+yarn test:unit RoleChecker.spec.ts //to run the tests in RoleChecker.spec.ts only
 ```
 
 ## Reseeding database
