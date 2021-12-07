@@ -19,15 +19,22 @@ RUN apt install -y gh build-essential git libsqlite3-dev nodejs zsh python
 # Install Yarn
 RUN npm install -g yarn
 
-# Install oh-my-zsh
+# Setup CLI environment. Install oh-my-zsh, add aliases + vimconfig (vim is installed later)
 RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 # Replace arrow in default theme to (docker) whale
 RUN sed -i 's/➜/🐳/g' ~/.oh-my-zsh/themes/robbyrussell.zsh-theme
 
-# Clean up installations
+RUN echo "alias d='ls -lah'" >> ~/.oh-my-zsh/themes/robbyrussell.zsh-theme 
+RUN curl -o /root/.vimrc https://raw.githubusercontent.com/amix/vimrc/master/vimrcs/basic.vim
+
+# Clean up installation
 RUN apt-get autoremove -y \
     && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && apt-get update
+
+ # Add basic CLI tools
+run apt-get -y install less vim
 
 # Set /app as workdir
 WORKDIR /app
