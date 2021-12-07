@@ -33,9 +33,13 @@ To make use of the pre-commit hooks setup by this project you are also required 
 
 ## Installation & Configuration
 
-Put secrets.yml (see Slack) containing google_client_secrets in backend/config/secrets.yml
+Clone the Yabs repository (https://github.com/itggot-TE4/Yabs) to a desireable place on your computer. 
+
+Open the cloned Yabs project and create a secrets.yml file in backend/config/secrets.yml
+Copy and paste the content of the secrets.yml file (see Slack) containing google_client_secrets into your empty secrets.yml file to the cloned project.
 
 The app runs in a docker container. After setting up the container (see below), all interaction with the app is managed through the container.
+
 ### Visual Studio Code
 
 Install the [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension
@@ -43,6 +47,8 @@ Install the [Remote - Containers](https://marketplace.visualstudio.com/items?ite
 ### Docker
 
 Install [Docker Desktop](https://www.docker.com/products/docker-desktop)
+
+Open the Yabs project in the command prompt.
 
 Build the container with:
 
