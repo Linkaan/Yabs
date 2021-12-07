@@ -66,6 +66,11 @@ Start the app container and the db container:
 docker-compose up
 ```
 
+Clean all containers + volumes
+```console
+docker system prune -a -f --volumes
+```
+
 ## Connecting to the container
 
 ### Visual Studio Code
