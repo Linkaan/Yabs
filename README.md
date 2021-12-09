@@ -167,3 +167,9 @@ In `/app/backend`
 docker-compose exec backend rails db:setup
 docker-compose exec backend rails db:fixtures:load
 ```
+
+### Tips and Tricks
+
+When having trouble to commit/push code, it may be caused by failing tests. If you are certain that the code is alright to push anyways, you may add --no-verify to the git commit the system will ignore the failing tests and the commit should be successful. 
+
+
