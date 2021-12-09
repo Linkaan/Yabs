@@ -15,7 +15,6 @@ const options = {
       }
     }
   },
-  sync: false
 };
 
 describe('AdminTitlesEditView.vue', () => {

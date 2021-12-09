@@ -8,7 +8,7 @@ jest.mock('@/store/modules/TitlesModule');
 
 describe('TitleListComponent.vue', () => {
   it('can search for books', () => {
-    const wrapper: Wrapper<vue> = factory(TitleListComponent, {sync: false});
+    const wrapper: Wrapper<vue> = factory(TitleListComponent);
 
     expect(wrapper.text()).toMatch('Clean Code');
     expect(wrapper.text()).toMatch('Alice in Wonderland');
@@ -21,7 +21,7 @@ describe('TitleListComponent.vue', () => {
   });
 
   it('checks whether ListComponent exists', async () => {
-    const wrapper: Wrapper<vue> = factory(TitleListComponent, {sync: false});
-    expect(wrapper.find({name: 'ListComponent'}).exists()).toBe(true);
+    const wrapper: Wrapper<vue> = factory(TitleListComponent);
+    expect(wrapper.findComponent({name: 'ListComponent'}).exists()).toBe(true);
   });
 });
