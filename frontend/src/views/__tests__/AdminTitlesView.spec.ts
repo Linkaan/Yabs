@@ -15,7 +15,7 @@ describe('AdminTitlesView.vue', () => {
     const wrapper: Wrapper<Vue> = shallowFactory(AdminTitlesView, injectRouterStubs);
     const componentNames = ['TitleFormComponent', 'TitleListComponent'];
     componentNames.forEach(componentName => {
-      expect(wrapper.find(`${componentName}-stub`).name()).toEqual(componentName);
+      expect(wrapper.findComponent({name: componentName}).exists()).toBe(true);
     });
   });
 });
