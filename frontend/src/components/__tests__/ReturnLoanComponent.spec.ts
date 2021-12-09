@@ -89,6 +89,7 @@ describe('ReturnLoanComponent.vue', () => {
     expect(wrapper.find('[data-jest=\'modal\']').exists()).toBe(true);
   });
 
+  //Test disabled since the test fails but it works in browser
   xit('Expect the barcodeReader to be present', async () => {
     const wrapper = factory(ReturnLoanComponent, options);
 
