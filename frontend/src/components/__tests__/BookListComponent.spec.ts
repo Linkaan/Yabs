@@ -1,14 +1,14 @@
 import BookListComponent from '@/components/BookListComponent.vue';
 import vue from 'vue';
 
-import { Wrapper} from '@vue/test-utils';
+import { VueClass, Wrapper} from '@vue/test-utils';
 import { factory } from '@/helpers/testFactoryHelpers';
 
 jest.mock('@/store/modules/BooksModule');
 
 describe('BookListComponent.vue', () => {
   it('can search for books', () => {
-    const wrapper: Wrapper<vue> = factory(BookListComponent);
+    const wrapper= factory(BookListComponent as VueClass<Vue>);
 
     expect(wrapper.text()).toMatch('Game of Thrones');
     expect(wrapper.text()).toMatch('Alice in Wonderland');

@@ -1,5 +1,5 @@
 import { shallowFactory } from '@/helpers/testFactoryHelpers';
-import { Wrapper } from '@vue/test-utils';
+import { VueClass, Wrapper } from '@vue/test-utils';
 import StartView from '../Start.vue';
 import Vue from 'vue';
 
@@ -7,7 +7,7 @@ describe('Start.vue', () => {
   
   it('router links exists in view', () => {
     const injectRouterStubs = {stubs: ['router-link']};
-    const wrapper: Wrapper<Vue> = shallowFactory(StartView, injectRouterStubs);
+    const wrapper= shallowFactory(StartView as VueClass<Vue>, injectRouterStubs);
     const titles = ['Profil', 'Admin', 'Hitta'];
     const routerLinks = wrapper.findAll('router-link-stub');
     
@@ -19,7 +19,7 @@ describe('Start.vue', () => {
   
   it('LoanListComponent exists in view', () => {
     const injectRouterStubs = {stubs: ['router-link']};
-    const wrapper: Wrapper<Vue> = shallowFactory(StartView, injectRouterStubs);
+    const wrapper= shallowFactory(StartView as VueClass<Vue>, injectRouterStubs);
     expect(wrapper.find('LoanListComponent-stub').exists()).toBe(true);
   });
 });

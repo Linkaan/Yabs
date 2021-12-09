@@ -3,7 +3,7 @@ import ReturnLoanComponent from '@/components/ReturnLoanComponent.vue';
 import Vue from 'vue';
 
 jest.mock('@/store/modules/BooksModule');
-import { Wrapper } from '@vue/test-utils';
+import { VueClass, Wrapper } from '@vue/test-utils';
 
 
 describe('ReturnLoanComponent.vue', () => {
@@ -85,13 +85,13 @@ describe('ReturnLoanComponent.vue', () => {
   };
 
   it('Expect the modal to be present', async () => {
-    const wrapper = factory(ReturnLoanComponent, options);
+    const wrapper = factory(ReturnLoanComponent as VueClass<Vue>, options);
     expect(wrapper.find('[data-jest=\'modal\']').exists()).toBe(true);
   });
 
   //Test disabled since the test fails but it works in browser
   xit('Expect the barcodeReader to be present', async () => {
-    const wrapper = factory(ReturnLoanComponent, options);
+    const wrapper = factory(ReturnLoanComponent as VueClass<Vue>, options);
 
     expect(wrapper.find('[data-jest=\'barcodeReader\']').exists()).toBe(false);
     wrapper.find('[data-jest=\'barcodeButton\']').trigger('click');
@@ -99,13 +99,13 @@ describe('ReturnLoanComponent.vue', () => {
   });
 
   xit('renders correctly', async () => {
-    const wrapper: Wrapper<Vue> = shallowFactory(ReturnLoanComponent, options);
+    const wrapper= shallowFactory(ReturnLoanComponent as VueClass<Vue>, options);
     expect(wrapper.html()).toMatchSnapshot();
   });
 
   //Test disabled since the test fails but it works in browser
   xit('initialises an update calls update book with correct input', async () => {
-    const wrapper: Wrapper<Vue> = factory(ReturnLoanComponent, options);
+    const wrapper= factory(ReturnLoanComponent as VueClass<Vue>, options);
 
     wrapper.find('[data-jest=\'bookBarcodeReturn\']').setValue('5002');
     wrapper.find('[data-jest=\'bookCondition\']').setValue('Broken');

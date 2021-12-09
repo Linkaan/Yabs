@@ -1,5 +1,5 @@
 import { shallowFactory } from '@/helpers/testFactoryHelpers';
-import { Wrapper } from '@vue/test-utils';
+import { VueClass, Wrapper } from '@vue/test-utils';
 import EditBookView from '../EditBookView.vue';
 import BooksModule from '@/store/modules/BooksModule';
 import { Book } from '@/types';
@@ -27,14 +27,14 @@ describe('EditBookView.vue', () => {
 
   it('BooksStatusComponent exists', () => {
     setTimeout(() => {
-      const wrapper: Wrapper<Vue> = shallowFactory(EditBookView);
+      const wrapper= shallowFactory(EditBookView as VueClass<Vue>);
       expect(wrapper.findComponent({name: 'BookStatusComponent'}).exists()).toBe(true);
     }, 1000);
   });
 
   it('correct bookproperties check', () => {
     setTimeout(() => {
-      const wrapper: Wrapper<Vue> = shallowFactory(EditBookView);
+      const wrapper= shallowFactory(EditBookView as VueClass<Vue>);
       baseBook.barcode = '1001';
       baseBook.title.name= 'korvmedmos';
       BooksModule.setBook(baseBook);

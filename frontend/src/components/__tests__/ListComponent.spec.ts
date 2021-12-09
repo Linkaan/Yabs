@@ -1,7 +1,7 @@
 import ListComponent from '@/components/ListComponent.vue';
 import vue from 'vue';
 
-import { Wrapper} from '@vue/test-utils';
+import { VueClass, Wrapper} from '@vue/test-utils';
 import { factory } from '@/helpers/testFactoryHelpers';
 
 describe('ListComponent.vue', () => {
@@ -42,7 +42,7 @@ describe('ListComponent.vue', () => {
   };
   
   it('can search for books', () => {
-    const wrapper: Wrapper<vue> = factory(ListComponent, injectPropsData);
+    const wrapper= factory(ListComponent as VueClass<Vue>, injectPropsData);
 
     expect(wrapper.text()).toMatch('Title1');
     expect(wrapper.text()).toMatch('Title2');
