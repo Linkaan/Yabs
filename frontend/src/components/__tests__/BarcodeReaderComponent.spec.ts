@@ -7,7 +7,7 @@ import BarcodeReaderComponent from '@/components/BarcodeReaderComponent.vue';
 describe('BarcodeReaderComponent.vue', () => {
   it('Renders correctly', async () => {
     const wrapper: Wrapper<Vue> = shallowFactory(BarcodeReaderComponent);
-    expect(wrapper.contains('#barcodeScanner')).toBeTruthy();
+    expect(wrapper.find('#barcodeScanner')).toBeTruthy();
     expect(wrapper.text()).toMatch('Initializing..');
   });
 });
