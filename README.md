@@ -99,7 +99,7 @@ gh auth login
 
 When installing make sure to pick the right options:
 - Github.com
-- https
+- SSH
 - n
 - open in browser
 
