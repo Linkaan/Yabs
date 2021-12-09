@@ -8,9 +8,6 @@ describe('AdminUsersView.vue', () => {
   beforeEach(() => {
     wrapper = shallowFactory(AdminUsersView);
   });  
-  it('Is not empty', () => {
-    expect(wrapper.isEmpty()).toBe(false);
-  });
   it('Search field exists', () => {
     const textField = wrapper.find('v-text-field-stub');
     expect(textField.html()).not.toBeFalsy();
