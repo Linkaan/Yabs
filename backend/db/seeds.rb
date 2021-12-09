@@ -38,6 +38,9 @@ title_alice = Title.create(name: "Alice in Wonderland", isbn: "0763645680",
 title_lotr = Title.create(name: "The Fellowship of the Ring", isbn: "9780547928210", cost: 100,
     title_type: "Skönlitteratur", subject: lib_sub)
 
+title_hwkwis = Title.create(name: "HOW WE KNOW WHAT ISN´T SO", isbn: "9780029117064", cost: 69,
+    title_type: "Skönlitteratur", subject: lib_sub)
+
 title_cc = Title.create(name: "Clean Code", isbn: "9780132350884", cost: 300, title_type: "Kurslitteratur", subject: p_sub)
 title_tomtens_jul = Title.create(name: "Tomtens jul", isbn: "9781999985462", cost: 60, title_type: "Kurslitteratur",
     subject: s_sub)
@@ -74,6 +77,7 @@ Book.create(barcode: "5005", condition: "Broken", title: title_lotr)
 Book.create(barcode: "5006", condition: "OK", title: title_cc)
 Book.create(barcode: "5007", condition: "OK", title: title_tomtens_jul)
 Book.create(barcode: "5008", condition: "OK", title: title_tomtens_jul)
+Book.create(barcode: "1337", condition: "OK", title: title_hwkwis)
 
 # Create test Cards
 Card.create(uid: 1, expiration_date: "2020-12-17 11:55:10", status: "testCard0", user_id: 2054282603)
