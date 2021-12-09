@@ -31,7 +31,7 @@ class TitlesModule extends VuexModule {
       TitlesAPI.all()
         .then((response: Title[]) => {
           this.convertTitleList(response);
-          resolve();
+          resolve(response);
         })
         .catch((error: object) => {
           this.setFailure(error);
