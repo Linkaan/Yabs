@@ -1,11 +1,11 @@
 import { shallowFactory } from '@/helpers/testFactoryHelpers';
-import { Wrapper } from '@vue/test-utils';
+import { VueClass, Wrapper } from '@vue/test-utils';
 import AdminView from '../AdminView.vue';
 import Vue from 'vue';
 
 describe('AdminView.vue', () => {
   const injectRouterStubs = {stubs: ['router-link', 'router-view']};
-  const wrapper: Wrapper<Vue> = shallowFactory(AdminView, injectRouterStubs);
+  const wrapper= shallowFactory(AdminView as VueClass<Vue>, injectRouterStubs);
   const requiredItems = ['Dashboard', 'Loans', 'Titles', 'Books', 'Cards', 'Users'];
   
   it('Is not empty', () => {

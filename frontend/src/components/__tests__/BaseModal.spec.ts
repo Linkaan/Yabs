@@ -1,4 +1,4 @@
-import { Wrapper } from '@vue/test-utils';
+import { VueClass, Wrapper } from '@vue/test-utils';
 import { shallowFactory } from '@/helpers/testFactoryHelpers';
 import Vue from 'vue';
 
@@ -6,7 +6,7 @@ import BaseModal from '@/components/BaseModal.vue';
 
 describe('BaseModal.vue', () => {
   it('Renders with correct data', async () => {
-    const wrapper: Wrapper<Vue> = shallowFactory(BaseModal);
+    const wrapper= shallowFactory(BaseModal as VueClass<Vue>);
 
     expect(wrapper.find('[data-jest=\'modal\']')).toBeTruthy();
     expect(wrapper.text()).toMatch('Noo');

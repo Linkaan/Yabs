@@ -1,6 +1,6 @@
 import LoanFormComponent from '@/components/LoanFormComponent.vue';
 
-import { Wrapper} from '@vue/test-utils';
+import { VueClass, Wrapper} from '@vue/test-utils';
 import { shallowFactory, factory } from '@/helpers/testFactoryHelpers';
 import LoansModule from '@/store/modules/LoansModule';
 import UsersModule from '@/store/modules/UsersModule';
@@ -28,19 +28,19 @@ jest.mock('@/store/modules/LoansModule', () => {
 describe('LoanFormComponent.vue', () => {
 
   xit('renders correctly', async () => {
-    const wrapper: Wrapper<Vue> = shallowFactory(LoanFormComponent);
+    const wrapper= shallowFactory(LoanFormComponent as VueClass<Vue>);
     expect(wrapper.html()).toMatchSnapshot();
   });
 
   //The snapshot *might* match, but the click event does not trigger ( see https://github.com/itggot-TE4/Yabs/issues/706)
   xit('renders the barcode scanner correctly', async () => {
-    const wrapper: Wrapper<Vue> = factory(LoanFormComponent);
+    const wrapper= factory(LoanFormComponent as VueClass<Vue>);
     wrapper.find('[data-jest=\'barcodeButton\']').trigger('click');
     expect(wrapper.html()).toMatchSnapshot();
   });
 
   it('calls loansmodule with correct values and resets the input fields', async () => {
-    const wrapper = factory(LoanFormComponent);
+    const wrapper = factory(LoanFormComponent as VueClass<Vue>);
     UsersModule.setCurrentUser({uid: 123} as User);
 
     wrapper.find('[data-jest=\'student_barcode\']').setValue('123');

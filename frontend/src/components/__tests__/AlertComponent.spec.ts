@@ -1,4 +1,4 @@
-import { Wrapper } from '@vue/test-utils';
+import { VueClass, Wrapper } from '@vue/test-utils';
 import { shallowFactory } from '@/helpers/testFactoryHelpers';
 import Vue from 'vue';
 
@@ -7,7 +7,7 @@ import AlertComponent from '@/components/AlertComponent.vue';
 describe('AlertComponent.vue', () => {
   
   xit('Renders corretly', async () => {
-    const wrapper: Wrapper<Vue> = shallowFactory(AlertComponent);
+    const wrapper= shallowFactory(AlertComponent as VueClass<Vue>);
     expect(wrapper.html()).toMatchSnapshot();
   });
   

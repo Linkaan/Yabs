@@ -1,5 +1,5 @@
 import { shallowFactory } from '@/helpers/testFactoryHelpers';
-import { Wrapper } from '@vue/test-utils';
+import { VueClass, Wrapper } from '@vue/test-utils';
 import ProfileView from '@/views/ProfileView.vue';
 import UsersModule from '@/store/modules/UsersModule';
 import { User } from '@/types';
@@ -20,7 +20,7 @@ describe('ProfileView.vue', () => {
   };
 
   it('Notifes you if you are not logged in', () => {
-    const wrapper: Wrapper<Vue> = shallowFactory(ProfileView);
+    const wrapper= shallowFactory(ProfileView as VueClass<Vue>);
     UsersModule.setCurrentUser(baseUser);
 
     expect(wrapper.text()).toMatch('inte inloggad');
@@ -28,7 +28,7 @@ describe('ProfileView.vue', () => {
 
   it('Displays the correct name/role/class', () => {
     setTimeout(() => {
-      const wrapper: Wrapper<Vue> = shallowFactory(ProfileView);
+      const wrapper= shallowFactory(ProfileView as VueClass<Vue>);
   
       baseUser.role = 1;
       baseUser.uid = 1111;
