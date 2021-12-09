@@ -15,7 +15,7 @@ describe('AdminLoansView.vue', () => {
     const wrapper: Wrapper<Vue> = shallowFactory(AdminLoansView, injectRouterStubs);
     const componentNames = ['LoanFormComponent', 'LoanListComponent', 'ReturnLoanComponent'];
     componentNames.forEach(componentName => {
-      expect(wrapper.find(`${componentName}-stub`).name()).toEqual(componentName);
+      expect(wrapper.findComponent({name: componentName}).exists()).toBe(true)
     });
   });
 });

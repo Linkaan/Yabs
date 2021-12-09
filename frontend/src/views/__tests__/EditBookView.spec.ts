@@ -28,7 +28,7 @@ describe('EditBookView.vue', () => {
   it('BooksStatusComponent exists', () => {
     setTimeout(() => {
       const wrapper: Wrapper<Vue> = shallowFactory(EditBookView);
-      expect(wrapper.find({name: 'BookStatusComponent'}).exists()).toBe(true);
+      expect(wrapper.findComponent({name: 'BookStatusComponent'}).exists()).toBe(true);
     }, 1000);
   });
 
