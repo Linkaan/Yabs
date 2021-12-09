@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   include Pundit
   protect_from_forgery
 
-  # Used as standard rescue method for method within Pundit that return false 
+  # Used as standard rescue method for method within Pundit that return false
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
@@ -24,8 +24,8 @@ class ApplicationController < ActionController::Base
   end
 
   # Standard method for users that try to access routes and resources that they are not
-  # granted access too 
-  
+  # granted access too
+
   private
 
   def user_not_authorized(exception)
