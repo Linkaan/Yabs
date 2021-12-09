@@ -5,8 +5,10 @@ import Vue from 'vue';
 import AlertComponent from '@/components/AlertComponent.vue';
 
 describe('AlertComponent.vue', () => {
-  it('Renders corretly', async () => {
+  
+  xit('Renders corretly', async () => {
     const wrapper: Wrapper<Vue> = shallowFactory(AlertComponent);
     expect(wrapper.html()).toMatchSnapshot();
   });
+  
 });
