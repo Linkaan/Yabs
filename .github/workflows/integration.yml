@@ -29,6 +29,9 @@ jobs:
         cd frontend
         yarn install
         yarn build --silent
+        mkdir -p cypress/screenshots
+        mkdir -p cypress/videos
+    
     - uses: ruby/setup-ruby@v1.59.1
       with:
         ruby-version: 2.7.2
@@ -62,18 +65,16 @@ jobs:
       run: |
         cd frontend
         yarn cypress run -e env=test
-    - uses: actions/upload-artifact@v2
-      - run: mkdir -p /app/frontend/cypress/screenshots
-      - run: mkdir -p /app/frontend/cypress/videos
+    - uses: actions/upload-artifact@v1
       if: failure()
       with:
         name: cypress-screenshots
-        path: /app/frontend/cypress/screenshots
-    - uses: actions/upload-artifact@v2
+        path: frontend/cypress/screenshots
+    - uses: actions/upload-artifact@v1
       if: always()
       with:
         name: cypress-videos
-        path: /app/frontend/cypress/videos
+        path: frontend/cypress/videos
   api-tests:
     runs-on: ubuntu-latest
     services: 
