@@ -137,7 +137,7 @@ export default defineComponent({
       cost: '',
       isbn: '',
       title_type: '', //eslint-disable-line camelcase
-      subject_id: '',  //eslint-disable-line camelcase
+      subject_id?: null,  //eslint-disable-line camelcase
     } as TitleForm);
 
     let buttonText = '';

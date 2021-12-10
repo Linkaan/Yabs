@@ -56,6 +56,7 @@ interface TitleForm {
   cost: string;
   isbn: string;
   title_type: string; //eslint-disable-line camelcase
+  subject_id: number; //eslint-disable-line camelcase
 }
 
 interface TitleCollection { [id: number]: Title; }
