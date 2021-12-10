@@ -99,14 +99,7 @@ export default defineComponent({
      * @return {boolean} Returns true if the array of headers contain an object with the given header text/title that is the same as headerText.
      */
     function contains(headers: Header[], headerText: string): boolean {
-      let i = 0;
-      let result = false;
-      while (i < headers.length) {
-        if (headers[i].text == headerText) result = true;
-        i += 1;
-      }
-
-      return result;
+      return headers.some(header => header.text === headerText);
     }
 
     /**
