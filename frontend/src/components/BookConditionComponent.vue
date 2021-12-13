@@ -51,7 +51,7 @@ interface BookConditionProps {
 };
 
 export default defineComponent({
-  name: 'BookStatusComponent',
+  name: 'BookConditionComponent',
   props: {
     title:{type:String, default:'Ingen Data'},
     title_id:{type:Number, default:0}, //eslint-disable-line camelcase

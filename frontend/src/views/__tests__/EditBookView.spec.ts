@@ -25,10 +25,10 @@ describe('EditBookView.vue', () => {
     updated_at: '' //eslint-disable-line camelcase
   };
 
-  it('BooksStatusComponent exists', () => {
+  it('BookConditionComponent exists', () => {
     setTimeout(() => {
       const wrapper= shallowFactory(EditBookView as VueClass<Vue>);
-      expect(wrapper.findComponent({name: 'BookStatusComponent'}).exists()).toBe(true);
+      expect(wrapper.findComponent({name: 'BookConditionComponent'}).exists()).toBe(true);
     }, 1000);
   });
 
