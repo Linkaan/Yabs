@@ -36,6 +36,7 @@
           class="ml-2 mr-5"
           text
           color="grey"
+          href="/"
           @click="signOut"
         >
           <v-icon>mdi-logout-variant</v-icon>
