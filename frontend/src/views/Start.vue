@@ -95,9 +95,9 @@ import LoansModule from '../store/modules/LoansModule';
 export default defineComponent({
   name: 'StartView',
   components: {
-    LoanListComponent
+    LoanListComponent,
   },
-  setup(_ : object, { root } : SetupContext): object {
+  setup(_: object, { root }: SetupContext): object {
     const size = ref('lg');
     const primary = ref('primary');
     const loading = ref(true);
@@ -110,7 +110,7 @@ export default defineComponent({
     // by fetching all the information from the two modules
 
     function created(): void {
-      if(UsersModule.currentUserID) {
+      if (UsersModule.currentUserID) {
         UsersModule.fetchAll();
         LoansModule.fetchAll();
       }
@@ -124,57 +124,46 @@ export default defineComponent({
       loading,
       usersModule,
     };
-  }
+  },
 });
-
-
 </script>
 
 
 <style lang="sass">
-
 .info
-    font-size: 1.2em
-
+  font-size: 1.2em
 
 .myCard
-    width: 100%
-    height: 90%
-    overflow-y: auto
-    position: relative
-    min-width: 0
-    background-color: #fff
-    background-clip: border-box
-    border: 1px solid rgba(0, 0, 0, 0.125)
-    border-radius: 0.25rem
-    display: flex
-    flex-direction: row
-    justify-content: center
-
+  width: 100%
+  height: 90%
+  overflow-y: auto
+  position: relative
+  min-width: 0
+  background-color: #fff
+  background-clip: border-box
+  border: 1px solid rgba(0, 0, 0, 0.125)
+  border-radius: 0.25rem
+  display: flex
+  flex-direction: row
+  justify-content: center
 
 #wrapper
-    display: flex
-    flex-direction: row
-    justify-content: space-between
-
+  display: flex
+  flex-direction: row
+  justify-content: space-between
 
 #left
-    display: flex
-    flex-direction: column
-    margin: 100px
-
+  display: flex
+  flex-direction: column
+  margin: 100px
 
 #right
-    margin: 100px
-
+  margin: 100px
 
 .container
-    margin-top: 100px
-
+  margin-top: 100px
 
 .row-btn
-    width: inherit
-    margin-bottom: 10px
-
-
+  width: inherit
+  margin-bottom: 10px
 </style>
