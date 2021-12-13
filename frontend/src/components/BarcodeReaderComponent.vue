@@ -105,11 +105,6 @@ export default defineComponent({
   width: 40vh;
   height: 40vh;
 }
-span {
-  position: absolute;
-  top:0;
-  left: 0;
-}
 #barcodeScanner * {
   width: 100%;
   height: 100%;
