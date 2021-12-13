@@ -164,6 +164,5 @@ export default defineComponent({
   margin-top: 100px
 
 .row-btn
-  width: inherit
   margin-bottom: 10px
 </style>
