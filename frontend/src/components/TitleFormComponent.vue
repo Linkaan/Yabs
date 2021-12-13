@@ -141,13 +141,11 @@ export default defineComponent({
     } as TitleForm);
 
     let buttonText = '';
-    if (props.mode == 'new') {
-      buttonText = 'Lägg till';
-    } else if (props.mode == 'edit') {
-      buttonText = 'Uppdatera titel';
-    } else {
-      buttonText = 'Unkown form mode';
-    };
+    switch(props.mode) {
+      case 'new':  buttonText = 'Lägg till';
+      case 'edit': buttonText = 'Uppdatera titel';
+      default:     buttonText = 'Unknown form mode';
+    }
 
     if (props.formData != null) {
       form.value = {...form.value, ...props.formData};
