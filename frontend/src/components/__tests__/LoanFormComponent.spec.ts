@@ -32,7 +32,7 @@ describe('LoanFormComponent.vue', () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  //The snapshot *might* match, but the click event does not trigger ( see https://github.com/itggot-TE4/Yabs/issues/706)
+  //The snapshot does not match
   xit('renders the barcode scanner correctly', async () => {
     const wrapper= factory(LoanFormComponent as VueClass<Vue>);
     wrapper.find('[data-jest=\'barcodeButton\']').trigger('click');

@@ -89,12 +89,11 @@ describe('ReturnLoanComponent.vue', () => {
     expect(wrapper.find('[data-jest=\'modal\']').exists()).toBe(true);
   });
 
-  //Test disabled since the test fails but it works in browser
-  xit('Expect the barcodeReader to be present', async () => {
+  it('Expect the barcodeReader to be present', async () => {
     const wrapper = factory(ReturnLoanComponent as VueClass<Vue>, options);
 
     expect(wrapper.find('[data-jest=\'barcodeReader\']').exists()).toBe(false);
-    wrapper.find('[data-jest=\'barcodeButton\']').trigger('click');
+    await wrapper.find('[data-jest=\'barcodeButton\']').trigger('click');
     expect(wrapper.find('[data-jest=\'barcodeReader\']').exists()).toBe(true);
   });
 
@@ -103,7 +102,7 @@ describe('ReturnLoanComponent.vue', () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  //Test disabled since the test fails but it works in browser
+  //Test disabled - not updated to use composition. api?
   xit('initialises an update calls update book with correct input', async () => {
     const wrapper= factory(ReturnLoanComponent as VueClass<Vue>, options);
 
@@ -131,9 +130,11 @@ describe('ReturnLoanComponent.vue', () => {
       ]
     });
     wrapper.setData({ showModal: true });
+    
+    //cannot not spy on method in comp. api, spy on effects instead
     const spy = jest.spyOn(wrapper.vm.$data, 'submitChanges');
 
-    wrapper.findAll('[data-jest=\'modal-btn\']').filter(x => x.html().toLowerCase().includes('bekräfta')).trigger('click');
+    await wrapper.findAll('[data-jest=\'modal-btn\']').filter(x => x.html().toLowerCase().includes('bekräfta')).trigger('click');
     expect(spy).toHaveBeenCalled();
   });
 });
