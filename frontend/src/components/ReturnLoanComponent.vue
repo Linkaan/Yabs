@@ -52,7 +52,7 @@
               large
               @click="onSubmit"
             >
-              Läman tillbaka
+              Lämna tillbaka
             </v-btn>
             <v-spacer />
           </v-card-actions>
