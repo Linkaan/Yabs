@@ -5,7 +5,7 @@
         v-model="search"
         data-jest="search"
         append-icon="search"
-        label="Search"
+        label="Sök"
         single-line
         hide-details
       />
@@ -16,6 +16,7 @@
       :items="items"
       :search="search"
       :items-per-page="itemsPerPage"
+      :footer-props="{itemsPerPageText: &quot;Rader per sida&quot;}"
     >
       <template
         v-if="useActions"
@@ -29,6 +30,9 @@
         >
           edit
         </v-icon>
+      </template>
+      <template v-slot:no-data>
+        <p>Tabellen är tom</p>
       </template>
     </v-data-table>
   </v-card>
@@ -82,7 +86,7 @@ export default defineComponent({
     function created(): void {
       if (props.useActions && !contains(props.headers, 'Action')) {
         props.headers.push({
-          text: 'Actions',
+          text: 'Ändra',
           value: 'action',
           sortable: false
         });

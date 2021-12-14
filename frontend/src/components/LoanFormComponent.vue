@@ -69,7 +69,7 @@
           <template v-slot:activator="{ on, attrs }">
             <v-text-field
               v-model="form.expiration_date"
-              label="Expire date"
+              label="Återlämnings datum"
               outlined
               v-bind="attrs"
               data-jest="expirationDate"

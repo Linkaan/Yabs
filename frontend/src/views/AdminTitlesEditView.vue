@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="display-2">
-      Titles
+      Titlar
     </h1>
     <div>
       <TitleFormComponent

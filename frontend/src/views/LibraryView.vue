@@ -1,11 +1,11 @@
 <template>
   <v-container> 
     <ReturnLoanComponent />
-    <h2>Add loan</h2>
+    <h2>Lägg till bock att låna</h2>
     <LibraryLoanComponent />
-    <h2>Your loans</h2>
+    <h2>Dina lån</h2>
     <LoanListComponent />
-    <h2>Search for a book</h2> 
+    <h2>Sök efter böcker</h2> 
     <TitleListComponent />
   </v-container>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <h1 class="display-2">
-    Dashboard
+    Översikt
   </h1>
 </template>
 

@@ -45,7 +45,7 @@
             variant="danger"
             @click="onCancel"
           >
-            Cancel
+            Avbryt
           </v-btn>
           <v-btn
             size="sm"

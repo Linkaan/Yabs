@@ -165,7 +165,7 @@ export default defineComponent({
 
     const options : object[] = [
       { value: 'Kurslitteratur', text: 'Kurslitteratur' },
-      { value: 'Bibloteksbok', text: 'Bibloteksbok' },
+      { value: 'Biblioteksbok', text: 'Biblioteksbok' },
       { value: 'Skönlitteratur', text: 'Skönlitteratur' },
     ];
 

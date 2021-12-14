@@ -2,7 +2,7 @@
   <div>
     <v-card data-cy="returnCard">
       <v-card-title>
-        Scan your book barcode
+        Skanna dina böckers streckkoder
       </v-card-title>
       <v-card-text>
         <v-form>
@@ -52,7 +52,7 @@
               large
               @click="onSubmit"
             >
-              Return
+              Läman tillbaka
             </v-btn>
             <v-spacer />
           </v-card-actions>

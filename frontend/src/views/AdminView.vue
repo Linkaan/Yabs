@@ -66,12 +66,12 @@ export default defineComponent({
   name: 'AdminView',
   setup(_: object, { root }: SetupContext): object {
     const items = ref([
-      { title: 'Dashboard', icon: 'dashboard', path: '/admin'},
-      { title: 'Loans', icon: 'library_books', path: '/admin/loans' },
-      { title: 'Titles', icon: 'title', path: '/admin/titles' },
-      { title: 'Books', icon: 'book', path: '/admin/books' },
-      { title: 'Cards', icon: 'account_box', path: '/admin/cards' },
-      { title: 'Users', icon: 'group', path: '/admin/users' }
+      { title: 'Översikt', icon: 'dashboard', path: '/admin'},
+      { title: 'Lån', icon: 'library_books', path: '/admin/loans' },
+      { title: 'Titlar', icon: 'title', path: '/admin/titles' },
+      { title: 'Böcker', icon: 'book', path: '/admin/books' },
+      { title: 'Passerkort', icon: 'account_box', path: '/admin/cards' },
+      { title: 'Användare', icon: 'group', path: '/admin/users' }
     ]);
     
     return { items };
