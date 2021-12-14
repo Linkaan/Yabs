@@ -40,7 +40,7 @@ const routes: RouteConfig[] = [
     component: loadView('FindView'),
   },
   {
-    path: '/libraryInterface',
+    path: '/library/Interface',
     name: 'library',
     component: loadView('LibraryView')
   }
