@@ -1,7 +1,7 @@
 <template>
   <v-container> 
     <ReturnLoanComponent />
-    <h2>Lägg till bock att låna</h2>
+    <h2>Lägg till bok att låna</h2>
     <LibraryLoanComponent />
     <h2>Dina lån</h2>
     <LoanListComponent />
