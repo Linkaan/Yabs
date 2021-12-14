@@ -79,7 +79,7 @@ export default defineComponent({
 });
 </script>
 
-<style>
+<style scoped>
 .main-container{display: flex !important}
 .left{margin-right: 50px}
 .right{flex: 1}

@@ -11,3 +11,7 @@ export default defineComponent({
   name: 'AdminDashboardView'
 });
 </script>
+
+<style scoped lang="scss">
+
+</style>

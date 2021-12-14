@@ -162,7 +162,7 @@ export default defineComponent({
 
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 
   .image{
     width: 50%;

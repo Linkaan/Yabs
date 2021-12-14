@@ -96,7 +96,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="sass">
+<style scoped lang="sass">
     img
         height: 200px
 

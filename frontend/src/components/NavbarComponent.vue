@@ -75,7 +75,7 @@ export default defineComponent({
 });
 </script>
 
-<style>
+<style scoped>
 a:hover {
   text-decoration: none !important;
 }
