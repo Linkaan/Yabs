@@ -25,7 +25,7 @@
     <v-text-field
       v-model="form.condition"
       data-jest="condition"
-      label="condition: tex 'ok', 'framsida saknas'"
+      label="Skick: tex 'ok', 'framsida saknas'"
       autocomplete="off"
       required
       outlined
@@ -106,8 +106,8 @@ export default defineComponent({
     };
 
     const availability: object[] = [
-      { state: 'true', value: true },
-      { state: 'false', value: false },
+      { state: 'Tillgänglig', value: true },
+      { state: 'Ej tillgänglig', value: false },
     ];
 
     return{

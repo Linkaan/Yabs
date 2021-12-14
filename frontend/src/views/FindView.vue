@@ -14,7 +14,7 @@
               <v-icon left>
                 mdi-account-outline
               </v-icon>
-              Users
+              Användare
             </v-chip>
 
             <v-chip
@@ -26,7 +26,7 @@
               <v-icon left>
                 mdi-handshake
               </v-icon>
-              Loans
+              Lån
             </v-chip>
             <v-chip
               v-model="books"
@@ -37,7 +37,7 @@
               <v-icon left>
                 mdi-library
               </v-icon>
-              Books
+              Böcker
             </v-chip>
           </v-chip-group>
 

@@ -2,7 +2,7 @@
   <div>
     <v-card data-cy="libraryLoanCard">
       <v-card-title>
-        Scan the book barcode
+        Skanna bokens streckkod
       </v-card-title>
       <v-form
         v-if="show"

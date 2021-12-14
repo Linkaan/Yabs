@@ -167,4 +167,3 @@ In `/app/backend`
 docker-compose exec backend rails db:setup
 docker-compose exec backend rails db:fixtures:load
 ```
-

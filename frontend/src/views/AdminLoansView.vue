@@ -7,7 +7,7 @@
   <div>  
     <div>
       <h1 class="display-2">
-        Loans
+        Lån
       </h1>
       <div class="flex">
         <div>
@@ -20,7 +20,7 @@
     </div>
     <div>
       <h1 class="display-2">
-        Return
+        Lämna tillbaka
       </h1>
       <ReturnLoanComponent />
     </div>

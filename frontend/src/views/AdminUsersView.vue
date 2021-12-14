@@ -3,7 +3,7 @@
     <v-text-field 
       v-model="search"
       append-icon="search"
-      label="Search"
+      label="Sök"
       single-line
       hide-details
     />
@@ -12,6 +12,7 @@
       :items="convertListToA(allUsers)"
       :items-per-page="5"
       :search="search"
+      :footer-props="{itemsPerPageText: &quot;Rader per sida&quot;}"
       @click:row="userClick"
     >
       <template v-slot:item.role="{ item }">
@@ -26,7 +27,7 @@
           color="primary"
           @click="updateUserRoles(allUsers[item.uid])"
         >
-          Save
+          Spara
         </v-btn>
       </template>
     </v-data-table>
