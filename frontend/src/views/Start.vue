@@ -6,17 +6,20 @@
 
 <template>
   <div class="view">
-    <div id="left" />
     <v-container>
       <h1 class="text-center display-3">
         Välkommen till YABS!
       </h1>
       <br>
-      <p class="title">
+      <p class="text-center">
         Denna applikation kommer att användas för att underlätta hantering/utlåningen av olika sorters litteratur och utskrivning av passerkort.
       </p>
+      <br>
       <v-row>
-        <v-col>
+        <v-col class="card">
+          <p class="title">
+            På profil-sidan så ser du all relevant information angående din profil som tex antal aktiva lån.
+          </p>
           <router-link
             class="link row-btn"
             :to="'/users/'+ usersModule.currentUserID"
@@ -30,12 +33,10 @@
             </v-btn>
           </router-link>
         </v-col>
-      </v-row>
-      <p class="title">
-        På profil-sidan så ser du all relevant information angående din profil som tex antal aktiva lån.
-      </p>
-      <v-row>
-        <v-col>
+        <v-col class="card">
+          <p class="title">
+            Admin-sidan används för att skapa nya passerkort, registera nya lån och lägga till nya böcker.
+          </p>
           <router-link
             class="link row-btn"
             to="/admin"
@@ -51,11 +52,11 @@
           </router-link>
         </v-col>
       </v-row>
-      <p class="title">
-        Admin-sidan används för att skapa nya passerkort, registera nya lån och lägga till nya böcker.
-      </p>
       <v-row>
-        <v-col>
+        <v-col class="card">
+          <p class="title">
+            På hitta-sidan kan du söka på allting som YABS hanterar, tex elever, specifika lån eller böcker.
+          </p>
           <router-link
             class="link row-btn"
             to="/find"
@@ -69,12 +70,26 @@
             </v-btn>
           </router-link>
         </v-col>
+        <v-col class="card">
+          <p class="title">
+            På bibliotek-sidan hittar du vyn eleven ser på biblioteksdatorn.
+          </p>
+          <router-link
+            class="link row-btn"
+            to="/library"
+          >
+            <v-btn
+              class="row-btn"
+              :size="size"
+              :color="primary"
+            >
+              Bibliotek
+            </v-btn>
+          </router-link>
+        </v-col>        
       </v-row>
-      <p class="title">
-        På hitta-sidan kan du söka på allting som YABS hanterar, tex elever, specifika lån eller böcker.
-      </p>
     </v-container>
-    <div id="right">
+    <div>
       <h5>Böcker som ska inlämnas snart:</h5>
       <br>
       <LoanListComponent />
@@ -130,39 +145,16 @@ export default defineComponent({
 
 
 <style lang="sass">
-.info
-  font-size: 1.2em
-
-.myCard
-  width: 100%
-  height: 90%
-  overflow-y: auto
-  position: relative
-  min-width: 0
-  background-color: #fff
-  background-clip: border-box
-  border: 1px solid rgba(0, 0, 0, 0.125)
-  border-radius: 0.25rem
-  display: flex
-  flex-direction: row
-  justify-content: center
-
-#wrapper
-  display: flex
-  flex-direction: row
-  justify-content: space-between
-
-#left
-  display: flex
-  flex-direction: column
-  margin: 100px
-
-#right
-  margin: 100px
-
-.container
-  margin-top: 100px
+.view
+  padding: 0 14rem
 
 .row-btn
   margin-bottom: 10px
+
+.card
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  padding: 2rem
 </style>
