@@ -2,7 +2,7 @@ import baseVisit from '../helper';
 
 describe('Add book loan', () => {
     it('Adds adds a book', () => {
-        baseVisit('/library');
+        baseVisit('/library/Interface');
 
         cy.get('[data-cy=book_barcode]').type('003456');
         cy.get('[data-cy=loanOutBook]').click();

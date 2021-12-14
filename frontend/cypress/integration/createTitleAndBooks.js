@@ -6,7 +6,7 @@ describe('This test will create a title and a book', () => {
   });
 
   it('Open up the title view', () => {
-    cy.get('[data-cy=Titles]').click();
+    cy.get('[data-cy=Titlar]').click();
   });
 
   it('Creates a title and reset the fields when added', () => {
@@ -17,9 +17,9 @@ describe('This test will create a title and a book', () => {
     cy.get('[data-cy=cost]').type(cost);
     cy.get('[data-cy=isbn]').type(isbn);
     cy.get('[data-cy=titleType]').click({force:true});
-    cy.get('div').contains('Kurslitteratur').click();
+    cy.get('.v-menu__content').contains('Kurslitteratur').click();
     cy.get('[data-cy=subjectId]').click({force:true});
-    cy.get('div').contains('Programm').click();
+    cy.get('.v-menu__content').contains('Programm').click();
     // Due to the browser translating programmering when running in our CI env
     // this test uses the Programm shorthand as that would make it pass both locally and in the CI
 
@@ -35,7 +35,7 @@ describe('This test will create a title and a book', () => {
   });
     
   it('Open up the book view', () => {
-    cy.get('[data-cy=Books]').click();
+    cy.get('[data-cy=Böcker]').click();
   });
 
   it('Creates a new book and validates it presence', () => {
@@ -45,7 +45,7 @@ describe('This test will create a title and a book', () => {
 
     cy.get('[data-cy=barcode]').click().type(barcode);
     cy.get('[data-cy=chooseTitle]').click();
-    cy.get('div').contains(bookTitle).click();
+    cy.get('.v-menu__content').contains(bookTitle).click();
     cy.get('[data-cy=condition]').type(status);
     cy.get('[data-cy=addBook]').click();
 

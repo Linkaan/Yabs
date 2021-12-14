@@ -6,7 +6,7 @@ describe('This test will update a title', () => {
   });
 
   it('Open up the title view', () => {
-    cy.get('[data-cy=Titles]').click();
+    cy.get('[data-cy=Titlar]').click();
   });
 
   it('Creates a title and reset the fields when added', () => {

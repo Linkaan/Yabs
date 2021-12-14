@@ -2,7 +2,7 @@ import baseVisit from '../helper';
 
 context('Return books', () => {
   beforeEach(() => {
-    baseVisit('/library');
+    baseVisit('/library/Interface');
   });
 
   it('get condition on books barcode', () => {

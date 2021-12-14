@@ -7,9 +7,9 @@ context('Going to the first page', () => {
 
     it('Click on "Admin" on first page and loan out an existing book', () => {
         cy.get('[data-cy=addPage]').click();
-        cy.get('h1').contains('Dashboard');
+        cy.get('.main').get('h1').contains('Översikt');
         cy.url().should('include', '/admin');
-        cy.get('[data-cy=Loans]').click()
+        cy.get('[data-cy=Lån]').click()
         cy.url().should('include', '/admin/loans');
         cy.get('[data-cy=student_barcode]').type('101834530373768097915');
         cy.get('[data-cy=book_barcode]').type('0001');
