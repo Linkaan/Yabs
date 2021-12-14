@@ -12,7 +12,7 @@ const routes: RouteConfig[] = [
   {
     path: '/',
     name: 'start',
-    component: loadView('Start'),
+    component: loadView('StartView'),
   },
   {
     path: '/users/:id',
@@ -40,7 +40,7 @@ const routes: RouteConfig[] = [
     component: loadView('FindView'),
   },
   {
-    path: '/library',
+    path: '/libraryInterface',
     name: 'library',
     component: loadView('LibraryView')
   }
