@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter, { RouterOptions } from 'vue-router';
 import { RouteConfig } from 'vue-router/types/router';
+import UsersModule from '@/store/modules/UsersModule';
 
 Vue.use(VueRouter);
 
@@ -42,7 +43,12 @@ const routes: RouteConfig[] = [
   {
     path: '/library',
     name: 'library',
-    component: loadView('LibraryView')
+    component: loadView('LibraryView'),
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: loadView('LogInView'),
   }
 ];
 const options: RouterOptions = {
@@ -50,4 +56,11 @@ const options: RouterOptions = {
   mode: 'history',
   routes,
 };
-export default new VueRouter(options);
+const router = new VueRouter(options);
+export default router;
+
+router.beforeEach((to, from, next) => {
+  if (to.name !== 'login' && to.name !== 'start' && !UsersModule.currentUser) next({ name: 'login' });
+  //else if (to.name !== 'start' && !UsersModule.currentUser) next({ name: 'login' });
+  else next();
+});
