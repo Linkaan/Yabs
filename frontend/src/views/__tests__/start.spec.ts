@@ -8,7 +8,7 @@ describe('Start.vue', () => {
   it('router links exists in view', () => {
     const injectRouterStubs = {stubs: ['router-link']};
     const wrapper= shallowFactory(StartView as VueClass<Vue>, injectRouterStubs);
-    const titles = ['Profil', 'Admin', 'Hitta'];
+    const titles = ['Profil', 'Admin', 'Hitta', 'Bibliotek'];
     const routerLinks = wrapper.findAll('router-link-stub');
     
     for (let i:number = 0; i < routerLinks.length; i++) {
