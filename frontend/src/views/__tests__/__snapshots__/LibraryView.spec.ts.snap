@@ -3,11 +3,11 @@
 exports[`LibraryView.vue matches the snapshot 1`] = `
 <v-container-stub tag="div">
   <returnloancomponent-stub></returnloancomponent-stub>
-  <h2>Add loan</h2>
+  <h2>Lägg till bok att låna</h2>
   <libraryloancomponent-stub></libraryloancomponent-stub>
-  <h2>Your loans</h2>
+  <h2>Dina lån</h2>
   <loanlistcomponent-stub></loanlistcomponent-stub>
-  <h2>Search for a book</h2>
+  <h2>Sök efter böcker</h2>
   <titlelistcomponent-stub></titlelistcomponent-stub>
 </v-container-stub>
 `;

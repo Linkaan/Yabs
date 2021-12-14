@@ -18,6 +18,9 @@
       :items-per-page="itemsPerPage"
       :footer-props="{itemsPerPageText: &quot;Rader per sida&quot;}"
     >
+      <template v-slot:item.availability="{item} ">
+        <span> {{ item.availability == null ? 'Tillgänglighet saknas' : (item.availability ? 'Tillgänglig' : 'Ej tillgänglig') }}</span>
+      </template>
       <template
         v-if="useActions"
         v-slot:item.action="{ item }"
@@ -129,7 +132,8 @@ export default defineComponent({
       }
     }
 
-    return { route, contains, search };
+
+    return { route, contains, search};
   }
 });
 </script>
