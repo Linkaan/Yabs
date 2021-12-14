@@ -144,7 +144,7 @@ export default defineComponent({
 </script>
 
 
-<style lang="sass">
+<style scoped lang="sass">
 .view
   padding: 0 14rem
 

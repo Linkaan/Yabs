@@ -24,7 +24,7 @@ export default({
 
 </script>
 
-<style lang="sass">
+<style scoped lang="sass">
 
 .app
   width: 100vw

@@ -97,9 +97,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped></style>
-
-<style lang="scss">
+<style scoped lang="scss">
 #barcodeScanner {
   position: relative;
   width: 40vh;

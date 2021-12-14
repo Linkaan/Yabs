@@ -10,7 +10,7 @@
   </div>
 </template>
 
-<style lang="sass">
+<style scoped lang="sass">
     #loading
         width: 64px
         height: 64px
